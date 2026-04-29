@@ -1,0 +1,54 @@
+{
+  "agents": {
+    "orchestrator": [
+      {
+        "name": "AGENT.md",
+        "size": 410,
+        "modified": "2026-01-01T00:00:00.000Z",
+        "isMarkdown": true,
+        "isJson": false,
+        "content": "# Demo Orchestrator Agent\n\nThis demo agent coordinates the team, prioritizes work, and routes tasks to specialized agents.\n\nReplace this with your own agent instructions."
+      }
+    ],
+    "researcher": [
+      {
+        "name": "AGENT.md",
+        "size": 360,
+        "modified": "2026-01-01T00:00:00.000Z",
+        "isMarkdown": true,
+        "isJson": false,
+        "content": "# Demo Research Agent\n\nThis demo agent researches sources, verifies claims, and prepares briefings.\n\nReplace this with your own agent instructions."
+      }
+    ],
+    "creator": [
+      {
+        "name": "AGENT.md",
+        "size": 370,
+        "modified": "2026-01-01T00:00:00.000Z",
+        "isMarkdown": true,
+        "isJson": false,
+        "content": "# Demo Creator Agent\n\nThis demo agent turns research and strategy into publishable content drafts.\n\nReplace this with your own agent instructions."
+      }
+    ],
+    "operator": [
+      {
+        "name": "AGENT.md",
+        "size": 360,
+        "modified": "2026-01-01T00:00:00.000Z",
+        "isMarkdown": true,
+        "isJson": false,
+        "content": "# Demo Operations Agent\n\nThis demo agent monitors recurring operations, approvals, and business checks.\n\nReplace this with your own agent instructions."
+      }
+    ],
+    "builder": [
+      {
+        "name": "AGENT.md",
+        "size": 350,
+        "modified": "2026-01-01T00:00:00.000Z",
+        "isMarkdown": true,
+        "isJson": false,
+        "content": "# Demo Builder Agent\n\nThis demo agent handles implementation tasks and technical handoffs.\n\nReplace this with your own agent instructions."
+      }
+    ]
+  }
+}

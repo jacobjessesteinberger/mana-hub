@@ -1,0 +1,37 @@
+{
+  "skills": [
+    {
+      "id": "demo-research",
+      "slug": "research",
+      "name": "research",
+      "title": "Research Skill",
+      "description": "Collect, evaluate, and summarize information from trusted sources.",
+      "source": "cursor",
+      "has_scripts": false,
+      "has_references": true,
+      "path": "skills/research"
+    },
+    {
+      "id": "demo-briefing",
+      "slug": "briefing",
+      "name": "briefing",
+      "title": "Briefing Skill",
+      "description": "Turn findings into concise operational briefings for humans and agents.",
+      "source": "cursor",
+      "has_scripts": false,
+      "has_references": true,
+      "path": "skills/briefing"
+    },
+    {
+      "id": "demo-quality-check",
+      "slug": "quality-check",
+      "name": "quality-check",
+      "title": "Quality Check Skill",
+      "description": "Review outputs for completeness, risk, quality, and missing context.",
+      "source": "codex",
+      "has_scripts": false,
+      "has_references": false,
+      "path": "skills/quality-check"
+    }
+  ]
+}
