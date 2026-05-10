@@ -37,7 +37,7 @@
     "@supabase/supabase-js": "^2.95.2",
     "chokidar": "^5.0.0",
     "dotenv": "^16.4.5",
-    "zod": "^3.23.8"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
