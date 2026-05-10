@@ -2,14 +2,27 @@
   "name": "mana-hub-starter",
   "version": "0.1.0",
   "private": false,
+  "description": "Self-hosted operations dashboard for your own AI agents. Next.js + Supabase + Claude Code, with risk approvals, cron requests, web-push notifications, knowledge base, and a file-drop bridge for tmux-hosted agents.",
+  "keywords": [
+    "ai-agents",
+    "agent-orchestration",
+    "claude-code",
+    "anthropic",
+    "mcp",
+    "nextjs",
+    "supabase",
+    "self-hosted",
+    "dashboard",
+    "ops"
+  ],
   "license": "SEE LICENSE IN LICENSE.md",
-  "homepage": "https://github.com/jesse-media/mana-hub-starter",
+  "homepage": "https://github.com/jesse-media/mana-hub#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jesse-media/mana-hub-starter.git"
+    "url": "git+https://github.com/jesse-media/mana-hub.git"
   },
   "bugs": {
-    "url": "https://github.com/jesse-media/mana-hub-starter/issues"
+    "url": "https://github.com/jesse-media/mana-hub/issues"
   },
   "author": {
     "name": "JESSE MEDIA (Jacob Jesse)",

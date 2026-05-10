@@ -5,16 +5,16 @@ Mana Hub Starter separates updateable core files from installer-owned files.
 Expected workflow:
 
 ```bash
-git remote add upstream https://github.com/your-org/mana-hub-starter.git
+git remote add upstream https://github.com/jesse-media/mana-hub.git
 git fetch upstream
 git merge upstream/main
 npm install
 npm run doctor
 ```
 
-Always read `MIGRATIONS.md` before upgrading.
+Always read `MIGRATIONS.md` and `CHANGELOG.md` before upgrading.
 
-Replace the remote URL with the official upstream repository for your installation.
+If you maintain your own fork, replace the remote URL with your fork's URL.
 
 ## Do Not Edit Core For Private Setup
 

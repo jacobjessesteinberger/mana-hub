@@ -3,10 +3,13 @@
 > Self-hosted operations dashboard for your own AI agents.
 > Postgres + Next.js + Claude Code + your own Mac.
 
+[![Release](https://img.shields.io/github/v/release/jesse-media/mana-hub?include_prereleases&label=release&color=8B5CF6)](https://github.com/jesse-media/mana-hub/releases)
 [![License](https://img.shields.io/badge/license-Community-blue)](LICENSE.md)
+[![CI](https://img.shields.io/github/actions/workflow/status/jesse-media/mana-hub/ci.yml?branch=main&label=CI)](https://github.com/jesse-media/mana-hub/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520.10-339933)](package.json)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E)](https://supabase.com)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Claude%20Code-cc785c)](https://www.anthropic.com)
 
 Mana Hub Starter is the blank, installable Mana Hub Core for building a
 self-hosted AI agent operations dashboard. It ships a dashboard, Supabase
@@ -26,11 +29,12 @@ routines on infrastructure you own.
 5. [Course project map](#course-project-map)
 6. [Self-hosted trust model](#self-hosted-trust-model)
 7. [Update safety](#update-safety)
-8. [Install helper skill](#install-helper-skill)
-9. [Documentation](#documentation)
-10. [Community & contributing](#community--contributing)
-11. [License](#license)
-12. [Security](#security)
+8. [Versioning & releases](#versioning--releases)
+9. [Install helper skill](#install-helper-skill)
+10. [Documentation](#documentation)
+11. [Community & contributing](#community--contributing)
+12. [License](#license)
+13. [Security](#security)
 
 ---
 
@@ -70,7 +74,7 @@ default) lets you boot the dashboard with synthetic data and zero secrets.
 ## Quickstart (5 min, demo mode)
 
 ```bash
-git clone https://github.com/jesse-media/mana-hub-starter.git mana-hub
+git clone https://github.com/jesse-media/mana-hub.git mana-hub
 cd mana-hub
 cp .env.example .env.local
 npm install
@@ -152,6 +156,31 @@ Private installer files are separated from updateable core files.
 See `docs/core-user-space.md`, `docs/core-host-sync.md`, `docs/update-safety.md`,
 and `UPGRADE.md`.
 
+## Versioning & releases
+
+Mana Hub follows [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`):
+
+- **MAJOR** — breaking changes (public API, schema, migration order). Always
+  paired with a migration note in [`UPGRADE.md`](UPGRADE.md).
+- **MINOR** — new features and additive schema changes. Backwards-compatible.
+- **PATCH** — bug fixes, doc improvements, security patches.
+
+Every release is tagged (`vX.Y.Z`), published as a
+[GitHub Release](https://github.com/jesse-media/mana-hub/releases) with notes,
+and recorded in [`CHANGELOG.md`](CHANGELOG.md). New SQL migrations always
+land additively and idempotently — see [`MIGRATIONS.md`](MIGRATIONS.md).
+
+To upgrade an existing installation:
+
+```bash
+git fetch origin
+git checkout v0.1.0   # or `git pull origin main` for bleeding edge
+npm install
+npm run doctor
+```
+
+Detailed upgrade flow lives in [`UPGRADE.md`](UPGRADE.md).
+
 ## Install helper skill
 
 Open the project in Cursor (or any Claude-Code-compatible workflow) and ask
@@ -180,10 +209,10 @@ It must not write secrets into Git-tracked files.
 
 ## Community & contributing
 
-- Bug reports and questions: <https://github.com/jesse-media/mana-hub-starter/issues>
+- Bug reports and questions: <https://github.com/jesse-media/mana-hub/issues>
 - Pull requests: see [`CONTRIBUTING.md`](CONTRIBUTING.md). Keep secrets out,
   document migrations.
-- Discussions: <https://github.com/jesse-media/mana-hub-starter/discussions>
+- Discussions: <https://github.com/jesse-media/mana-hub/discussions>
 - If Mana Hub helps you ship, a star on GitHub is the best way to say thanks.
 
 ## License

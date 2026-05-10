@@ -4,9 +4,9 @@ Mana Hub Core is the source of truth for general product behavior. Host integrat
 
 ## Rule
 
-1. Build reusable product behavior in `mana-hub-starter` first.
+1. Build reusable product behavior in the `mana-hub` Core first.
 2. Integrate host-specific behavior through configuration, adapters, or user space.
-3. If a Core-relevant fix is discovered inside a host project, mark it as a Core candidate and port a neutral version back into `mana-hub-starter`.
+3. If a Core-relevant fix is discovered inside a host project, mark it as a Core candidate and port a neutral version back into `mana-hub`.
 4. Keep host names, private paths, production data, private avatars, and backend-specific assumptions out of Core.
 
 ## Core Candidates
@@ -39,7 +39,7 @@ Keep these in the host integration:
 
 ```mermaid
 flowchart LR
-  core["mana-hub-starter Core"] --> host["Host Integration"]
+  core["mana-hub Core"] --> host["Host Integration"]
   host --> candidate["Core candidate discovered"]
   candidate --> neutralize["Neutralize names, paths, data"]
   neutralize --> core

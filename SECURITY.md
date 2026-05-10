@@ -7,7 +7,7 @@ Please **do not** open a public GitHub issue for security reports.
 Use one of these private channels instead:
 
 1. **GitHub Private Vulnerability Reporting** — preferred. Open
-   <https://github.com/jesse-media/mana-hub-starter/security/advisories/new>.
+   <https://github.com/jesse-media/mana-hub/security/advisories/new>.
 2. **Maintainer contact** — if private reporting is not enabled yet, reach
    the maintainer via the GitHub profile <https://github.com/jesse-media>
    and request a private channel.
@@ -18,9 +18,32 @@ confirmed issues.
 
 ## Supported versions
 
-Mana Hub Starter is published as a rolling source-available release. Only the
-latest commit on `main` receives security fixes. If you fork the repo, you are
-responsible for keeping your fork up to date.
+Mana Hub follows [Semantic Versioning](https://semver.org/). Security fixes
+land on the latest minor of the current major release; older majors are not
+patched.
+
+| Version | Supported |
+| --- | --- |
+| `0.1.x` | ✅ active development |
+| `< 0.1.0` | ❌ not supported (pre-release) |
+
+If you fork the repo, you are responsible for keeping your fork up to date.
+
+## Active security controls
+
+The repo runs the following automated checks on every push and pull request,
+plus on a weekly schedule for drift catching:
+
+- **CI** (`.github/workflows/ci.yml`) — lint, typecheck, doctor, build for the
+  dashboard and typecheck for the Bridge.
+- **CodeQL** (`.github/workflows/codeql.yml`) — GitHub-hosted static analysis
+  with `security-extended` + `security-and-quality` query packs for
+  JavaScript/TypeScript.
+- **Dependabot** (`.github/dependabot.yml`) — weekly dependency PRs (npm root,
+  npm bridge, GitHub Actions), grouped by patch/minor with separate PRs for
+  major bumps.
+- **Dependabot Vulnerability Alerts** + **Security Updates** — enabled at the
+  repo level so disclosed CVEs in dependencies trigger automatic PRs.
 
 ## Single-tenant assumption (read this before going live)
 

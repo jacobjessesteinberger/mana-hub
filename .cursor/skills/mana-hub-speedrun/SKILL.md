@@ -37,7 +37,7 @@ afterwards from `docs/`.
 ### 1. Clone + install (≈ 2 min)
 
 ```bash
-git clone https://github.com/jesse-media/mana-hub-starter.git mana-hub
+git clone https://github.com/jesse-media/mana-hub.git mana-hub
 cd mana-hub
 cp .env.example .env.local
 npm install

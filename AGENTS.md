@@ -1,10 +1,10 @@
 # Mana Hub Starter — Core Product Rules
 
-Diese Datei ist die dauerhafte Arbeitsgrundlage fuer alle Agents, Cursor-Sessions und Claude-Code-Sessions, die an `mana-hub-starter` arbeiten.
+Diese Datei ist die dauerhafte Arbeitsgrundlage fuer alle Agents, Cursor-Sessions und Claude-Code-Sessions, die am `mana-hub`-Repo (npm-Paket: `mana-hub-starter`) arbeiten.
 
 ## Produktziel
 
-`mana-hub-starter` ist der blanke, installierbare Mana-Hub-Core fuer Kurs, GitHub und Nutzer-Installationen.
+`mana-hub` (npm-Paket: `mana-hub-starter`) ist der blanke, installierbare Mana-Hub-Core fuer Kurs, GitHub und Nutzer-Installationen.
 
 Der Core muss so aufgebaut sein, dass Nutzer ihn fuer ihr eigenes Agent-System installieren, konfigurieren und erweitern koennen, ohne private Host-Daten oder personenbezogene Host-Logik zu uebernehmen.
 

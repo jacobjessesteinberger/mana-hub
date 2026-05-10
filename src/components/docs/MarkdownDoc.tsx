@@ -17,7 +17,7 @@ interface Props {
   githubBase?: string
 }
 
-const DEFAULT_GITHUB_BASE = 'https://github.com/jesse-media/mana-hub-starter/blob/main/docs'
+const DEFAULT_GITHUB_BASE = 'https://github.com/jesse-media/mana-hub/blob/main/docs'
 
 function slugifyHeading(text: string) {
   return text
