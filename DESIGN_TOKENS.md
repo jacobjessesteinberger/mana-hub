@@ -141,7 +141,6 @@ SECTION: AGENTS
 SECTION: COMPANY
   - Setup (Rocket)
   - Knowledge Base (Book)
-  - Skill Hub (Sparkles)
   - Health (Activity)
   - Org (Building)
   - Settings (Settings)

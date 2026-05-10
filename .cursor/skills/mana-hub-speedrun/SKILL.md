@@ -30,7 +30,7 @@ afterwards from `docs/`.
 - A Supabase account with **one empty project** ready (free tier is fine)
 - Claude Code CLI installed (`claude --version`) and logged in
 - The user knows where they want their agent folder
-  (e.g. `~/agents/<name>/`, default `~/agents/mana/`)
+  (e.g. `~/agents/<name>/`, default `~/agents/orchestrator/`)
 
 ## The 7 steps (≈ 4 min each)
 
@@ -75,13 +75,13 @@ click it. You should land on `/dashboard/agents`.
 
 ```bash
 mkdir -p ~/agents
-cp -R templates/agent-boilerplate ~/agents/mana
-cd ~/agents/mana
+cp -R templates/agent-boilerplate ~/agents/orchestrator
+cd ~/agents/orchestrator
 ```
 
 Edit `CLAUDE.md`:
 
-- replace `[AGENT_NAME]` with `MANA`
+- replace `[AGENT_NAME]` with `Orchestrator`
 - replace `<USER_NAME>` with your first name
 - fill in §1 (Identitaet) and §2 (Kommunikationsstil) in 2–3 sentences
 
@@ -99,7 +99,7 @@ In `bridge/.env` set:
 - `SUPABASE_URL` and `SUPABASE_SECRET_KEY` (same project as the dashboard,
   but use the **secret** key, not the publishable one)
 - `BRIDGE_MODE=file_drop`
-- `BRIDGE_AGENT_NAMES=mana`
+- `BRIDGE_AGENT_NAMES=orchestrator`
 - `BRIDGE_AGENTS_DIR=$HOME/agents`
 
 Then:
@@ -117,18 +117,18 @@ dashboard heartbeat indicator going live within ~10 seconds.
 In a fresh terminal:
 
 ```bash
-tmux new -s mana
-cd ~/agents/mana
+tmux new -s orchestrator
+cd ~/agents/orchestrator
 claude --dangerously-skip-permissions
 ```
 
 In Claude Code, wait until the boot finishes and the agent has read
 `CLAUDE.md`. Detach with `Ctrl+b` then `d`.
 
-Open the dashboard, go to **Agents → mana → Chat**, send any message. Within
-seconds the message appears in `~/agents/mana/inbox/` (Bridge wrote it),
+Open the dashboard, go to **Agents → orchestrator → Chat**, send any message. Within
+seconds the message appears in `~/agents/orchestrator/inbox/` (Bridge wrote it),
 the tmux Claude Code reads it, processes it, writes a reply to
-`~/agents/mana/outbox/`, the Bridge picks it up, and the reply appears in
+`~/agents/orchestrator/outbox/`, the Bridge picks it up, and the reply appears in
 the dashboard chat.
 
 ## Done
@@ -153,8 +153,8 @@ If you got the round-trip in step 7, the speedrun is complete. From here:
 - Bridge prints `[connector] error` → wrong `SUPABASE_SECRET_KEY` or
   `SUPABASE_URL` (URL must NOT end with `/rest/v1`).
 - Dashboard chat says "Agent offline" → tmux Claude Code is not running, or
-  Bridge cannot find `~/agents/mana/` (check `BRIDGE_AGENTS_DIR`).
-- Reply never arrives → `~/agents/mana/outbox/` is empty (Claude Code didn't
+  Bridge cannot find `~/agents/orchestrator/` (check `BRIDGE_AGENTS_DIR`).
+- Reply never arrives → `~/agents/orchestrator/outbox/` is empty (Claude Code didn't
   write a reply) or has a malformed YAML header (check `reply_to_id`).
 
 For deeper debugging, switch back to the install-helper skill or

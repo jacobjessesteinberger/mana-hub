@@ -142,7 +142,7 @@ export default function SetupPage() {
         }
       />
 
-      <div style={{ padding: '0 28px 28px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 320px', gap: 16 }}>
+      <div className="setup-shell">
         <div className="col gap-4">
           {/* Progress hero */}
           <div className="card card-hero" style={{ padding: '20px 22px' }}>
@@ -225,7 +225,7 @@ export default function SetupPage() {
         </div>
 
         {/* Right rail */}
-        <div className="col gap-4" style={{ position: 'sticky', top: 60, alignSelf: 'flex-start' }}>
+        <div className="setup-rail col gap-4">
           <div className="card">
             <div className="card-hd"><h3>Summary</h3></div>
             <div className="card-bd col gap-3">

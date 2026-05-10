@@ -101,9 +101,6 @@ export default function AgentDashboardPage() {
   const successPct = totalSucc + totalFail > 0
     ? Math.round((totalSucc / (totalSucc + totalFail)) * 100)
     : null
-  const tokenUsage = '38%'
-
-  const workspaces = ['Routing', 'Knowledge', 'Content']
 
   return (
     <div
@@ -204,7 +201,8 @@ export default function AgentDashboardPage() {
               Keine Runs in den letzten 14 Tagen.
             </div>
           ) : (
-            <table className="tbl">
+            <div className="tbl-wrap">
+            <table className="tbl" style={{ minWidth: 480 }}>
               <thead>
                 <tr>
                   <th>Routine</th>
@@ -231,44 +229,12 @@ export default function AgentDashboardPage() {
                 })}
               </tbody>
             </table>
+            </div>
           )}
         </div>
       </div>
 
       <div className="col gap-3" style={{ minWidth: 0 }}>
-        {/* Workspaces */}
-        <div className="card" style={{ padding: 14 }}>
-          <div
-            style={{
-              fontSize: 10.5,
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--fg-faint)',
-              marginBottom: 10,
-            }}
-          >
-            Aktuelle Workspaces
-          </div>
-          {workspaces.map((w, idx) => (
-            <div
-              key={w}
-              className="row gap-2"
-              style={{
-                padding: '8px 0',
-                borderBottom: idx === workspaces.length - 1 ? 'none' : '1px solid var(--border)',
-              }}
-            >
-              <div style={{ width: 8, height: 8, borderRadius: '50%', background: meta.color }} />
-              <span style={{ fontSize: 13, fontWeight: 500 }}>{w}</span>
-              <span style={{ flex: 1 }} />
-              <span className="tabular" style={{ fontSize: 11.5, color: 'var(--fg-subtle)' }}>
-                {Math.max(1, Math.floor(issues.length / workspaces.length))} Tasks
-              </span>
-            </div>
-          ))}
-        </div>
-
         {/* Health */}
         <div className="card" style={{ padding: 14 }}>
           <div
@@ -284,10 +250,9 @@ export default function AgentDashboardPage() {
             Health
           </div>
           {[
-            ['Latency p95', '420ms', 'ok'],
             ['Soft Fails (24h)', String(totalFail), totalFail > 0 ? 'warn' : 'ok'],
-            ['Token usage', tokenUsage, 'ok'],
             ['Success rate', successPct != null ? `${successPct}%` : '—', 'ok'],
+            ['Open Issues', String(issues.length), 'ok'],
           ].map(([label, value, tone]) => (
             <div
               key={label}

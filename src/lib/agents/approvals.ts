@@ -165,7 +165,7 @@ export async function insertDecisionMessage(
 }
 
 /**
- * Insert a "MANA hat eine Approval angefragt"-Hinweis into agent_messages so
+ * Insert a neutral risk-approval notice into agent_messages so
  * the chat thread shows it (otherwise the user only sees the request in the
  * Approvals tab and not in the conversation that triggered it).
  *

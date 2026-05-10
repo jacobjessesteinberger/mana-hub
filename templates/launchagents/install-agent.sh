@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install a Mana Hub Agent as a macOS LaunchAgent.
 # Usage: bash install-agent.sh <agent-name> [agent-dir]
-#   <agent-name>: lowercase short name, e.g. "taro"
+#   <agent-name>: lowercase short name, e.g. "orchestrator"
 #   [agent-dir]:  absolute path to agent directory (default: $HOME/agents/<agent-name>)
 
 set -euo pipefail

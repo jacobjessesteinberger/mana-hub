@@ -12,9 +12,9 @@
 - Entscheidung: [Was wurde gewaehlt]
 - Konsequenzen: [Was zieht das nach sich]
 
-## YYYY-MM-DD: [Beispiel] Supabase als Backend
+## YYYY-MM-DD: [Weitere Entscheidung]
 
-- Kontext: Backend fuer Mana Hub gesucht.
-- Alternativen: Firebase, Eigenes Postgres + REST.
-- Entscheidung: Supabase wegen Realtime + Auth out-of-the-box.
-- Konsequenzen: Vendor-Lock-in mittel, Migration moeglich (siehe docs/backend-adapters.md).
+- Kontext: [Warum musste entschieden werden]
+- Alternativen: [Was wurde verworfen]
+- Entscheidung: [Was wurde gewaehlt]
+- Konsequenzen: [Was zieht das nach sich]

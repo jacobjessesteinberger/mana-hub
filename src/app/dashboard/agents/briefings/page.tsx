@@ -685,6 +685,7 @@ const ReaderPanel = memo(function ReaderPanel({ briefing, loading, onAction }: {
           display: 'flex',
           alignItems: 'center',
           gap: 8,
+          flexWrap: 'wrap',
           flex: 'none',
         }}
       >

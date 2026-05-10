@@ -175,7 +175,7 @@ export default function DashboardPage() {
         }
       />
 
-      <div className="page-pad" style={{ padding: '0 28px 28px' }}>
+      <div className="page-pad">
         <div className="col gap-4">
           <div className="card card-hero card-pad">
             <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_432px]">
@@ -220,7 +220,7 @@ export default function DashboardPage() {
                   { label: 'Recent tasks', value: recentIssues.length, hint: 'last 50', tone: 'accent' },
                   { label: 'Pending reviews', value: pendingApprovals, hint: 'approval', tone: 'warn' },
                 ].map(item => (
-                  <div key={item.label} className="px-2 py-1 first:pl-0 sm:px-5 sm:first:pl-0">
+                  <div key={item.label} className="kpi-cell px-2 py-1 first:pl-0 sm:px-5 sm:first:pl-0">
                     <div className="row gap-2">
                       <span className="tabular text-[24px] font-semibold leading-none tracking-[-0.03em] text-[var(--fg)]">{item.value}</span>
                       <span className={cn('badge', item.tone === 'ok' && 'badge-ok', item.tone === 'info' && 'badge-info', item.tone === 'accent' && 'badge-accent', item.tone === 'warn' && 'badge-warn')}>

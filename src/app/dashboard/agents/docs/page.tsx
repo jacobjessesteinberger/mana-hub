@@ -107,7 +107,7 @@ export default function DocsPage() {
   }, [isDocView, docSlug, docs])
 
   return (
-    <div className="page fade-in" style={{ padding: '28px', maxWidth: 1280, margin: '0 auto' }}>
+    <div className="page fade-in docs-page" style={{ maxWidth: 1280, margin: '0 auto' }}>
       <div className="page-head" style={{ marginBottom: 18 }}>
         <div>
           <div className="eyebrow">Mana Hub Core</div>

@@ -33,7 +33,7 @@ Diese Sachen müssen **auf dem Mac selbst** sitzen, **bevor** du das Repo überh
 | **Xcode Command Line Tools** | git, compiler — Voraussetzung für brew | sofort | `xcode-select --install` |
 | **Homebrew** | Paketmanager für tmux, ggf. node | spätestens Lesson 3.4 | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` — fragt einmal nach deinem Mac-Passwort, läuft 3–5 Min |
 | **Stable Node ≥ 20** außerhalb von Cursor | Repo-Install (`npm install`), Bridge, Doctor, später LaunchAgents | sofort | `brew install node` ODER pnpm/nvm — wichtig: **nicht** der Cursor-interne Node aus `/Applications/Cursor.app/...` |
-| **Claude Code CLI** | MANA bzw. dein Agent läuft als `claude` REPL | ab Lesson 3.4 | `npm install -g @anthropic-ai/claude-code` — siehe Hinweis unten zu PATH |
+| **Claude Code CLI** | Dein lokaler Agent läuft als `claude` REPL | ab Lesson 3.4 | `npm install -g @anthropic-ai/claude-code` — siehe Hinweis unten zu PATH |
 | **tmux** | Persistente Agent-Sessions | ab Lesson 3.4 | `brew install tmux` — kann live in der Lesson, **nicht** vorwegnehmen wenn du Lesson 3.4 noch aufnimmst |
 
 ### Nach `brew install` (egal was) — PATH einmalig in `~/.zshrc` aktivieren

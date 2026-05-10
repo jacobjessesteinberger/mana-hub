@@ -14,7 +14,7 @@
   1. Copy the two blocks below into your agent's CLAUDE.md:
        - Block A → as a new "§4.5 Risk-Approval-Protokoll" section inside §4 Grenzen
        - Block B → as a one-paragraph addition at the end of "§5.2 Inbox"
-  2. Replace every <AGENT_NAME> with your agent's lowercase name (e.g. "mana", "taro").
+  2. Replace every <AGENT_NAME> with your agent's lowercase name (e.g. "orchestrator", "researcher").
   3. Tune the "Welche Aktionen sind sensibel" list (Block A) to your agent's domain.
      The defaults below cover money, external systems, destructive ops, contracts.
   4. Make sure the bridge is running with BRIDGE_MODE=file_drop and the

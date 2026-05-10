@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { requireAuth, isAuthResponse } from '@/lib/auth/middleware'
 import { createServerSupabase } from '@/lib/supabase'
 
+const isDemoMode = process.env.MANA_HUB_DEMO_MODE === 'true'
+
 // GET /api/agents/heartbeats?agent=researcher — latest heartbeat per agent
 export async function GET(request: NextRequest) {
   const auth = await requireAuth(request)
@@ -9,6 +11,11 @@ export async function GET(request: NextRequest) {
 
   const { searchParams } = new URL(request.url)
   const agent = searchParams.get('agent')
+
+  if (isDemoMode) {
+    if (agent) return NextResponse.json({ heartbeat: null })
+    return NextResponse.json({ heartbeats: [] })
+  }
 
   const supabase = createServerSupabase()
 

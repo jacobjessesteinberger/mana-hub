@@ -1,13 +1,21 @@
 'use client'
 
 import { Loader2 } from 'lucide-react'
-import { useAuth } from '@/lib/auth/AuthContext'
+import { AuthProvider, useAuth } from '@/lib/auth/AuthContext'
 import { ToastProvider } from '@/components/ui/Toaster'
 import { NotificationProvider } from '@/lib/notifications/NotificationContext'
 import AgentRealtimeListener from '@/components/realtime/AgentRealtimeListener'
 import QuickChatWidget from '@/components/chat/QuickChatWidget'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <AuthProvider>
+      <DashboardShell>{children}</DashboardShell>
+    </AuthProvider>
+  )
+}
+
+function DashboardShell({ children }: { children: React.ReactNode }) {
   const { loading } = useAuth()
 
   if (loading) {

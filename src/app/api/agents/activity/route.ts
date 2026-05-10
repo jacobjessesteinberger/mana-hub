@@ -3,11 +3,32 @@ import { requireAuth, isAuthResponse } from '@/lib/auth/middleware'
 import { createServerSupabase } from '@/lib/supabase'
 import { AGENT_NAMES } from '@/lib/agents-meta'
 
+const isDemoMode = process.env.MANA_HUB_DEMO_MODE === 'true'
+
 export async function GET(request: NextRequest) {
   const auth = await requireAuth(request)
   if (isAuthResponse(auth)) return auth
 
   const agent = new URL(request.url).searchParams.get('agent')
+
+  if (isDemoMode) {
+    if (!agent) {
+      return NextResponse.json({ activities: {} }, {
+        headers: { 'Cache-Control': 'no-store, max-age=0' },
+      })
+    }
+    return NextResponse.json({
+      active: false,
+      steps: [],
+      elapsed: null,
+      updated_at: null,
+      permission_pending: false,
+      permission_prompt: null,
+    }, {
+      headers: { 'Cache-Control': 'no-store, max-age=0' },
+    })
+  }
+
   const supabase = createServerSupabase()
 
   if (!agent) {

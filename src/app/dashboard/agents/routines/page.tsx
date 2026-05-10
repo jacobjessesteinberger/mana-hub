@@ -218,7 +218,7 @@ export default function RoutinesPage() {
                   </div>
 
                   <div style={{ padding: '10px 12px 0' }}>
-                    <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
                       <span style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--fg-faint)' }}>Agent-Faecher</span>
                       <div className="tabs" style={{ margin: 0 }}>
                         {(['Jobs', 'Skills', 'Beides'] as AgentView[]).map(label => (

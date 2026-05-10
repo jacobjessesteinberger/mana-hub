@@ -94,7 +94,7 @@ BRIDGE_MODE=inline
 BRIDGE_MODE=file_drop
 BRIDGE_AGENTS_DIR=$HOME/agents      # base directory containing one folder per agent
 BRIDGE_TMUX_ENABLED=true            # send tmux notifications when new inbox files arrive
-BRIDGE_AGENT_NAMES=taro,sona        # comma-separated list of agents to handle
+BRIDGE_AGENT_NAMES=orchestrator,researcher  # comma-separated list of agents to handle
 ```
 
 After changing the mode, restart the bridge:

@@ -4,8 +4,8 @@
   Mana Hub Agent LaunchAgent template (one per Agent).
 
   Placeholders are substituted by templates/launchagents/install-agent.sh:
-    __AGENT_NAME__   = lowercase agent name (e.g. "taro"); used in the Label, tmux session, and log file names
-    __AGENT_DIR__    = absolute path to the agent directory (e.g. ~/agents/taro)
+    __AGENT_NAME__   = lowercase agent name (e.g. "orchestrator"); used in the Label, tmux session, and log file names
+    __AGENT_DIR__    = absolute path to the agent directory (e.g. ~/agents/orchestrator)
     __HOME__         = absolute path to the user home directory
     __TMUX_PATH__    = absolute path to the tmux binary
     __CLAUDE_PATH__  = absolute path to the claude binary

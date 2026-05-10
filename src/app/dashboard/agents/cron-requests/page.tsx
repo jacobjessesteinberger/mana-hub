@@ -177,7 +177,7 @@ export default function CronRequestsPage() {
               style={{ padding: 16, opacity: item.status === 'pending' ? 1 : 0.7 }}
               title={item.id}
             >
-              <div className="row gap-3" style={{ alignItems: 'flex-start' }}>
+              <div className="row gap-3 stack-actions-mobile" style={{ alignItems: 'flex-start' }}>
                 {agent ? <AgentAvatar agent={agent} size="sm" /> : null}
                 <div style={{ minWidth: 0, flex: 1 }}>
                   <div className="row gap-2" style={{ alignItems: 'center', flexWrap: 'wrap' }}>

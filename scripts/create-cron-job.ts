@@ -7,13 +7,13 @@
  *
  * Examples:
  *   npm run cron:create -- --help
- *   npm run cron:create -- --agent mana --id mana-morning-briefing \
+ *   npm run cron:create -- --agent orchestrator --id orchestrator-morning-briefing \
  *                          --name "Morning Briefing" --schedule "07:30" \
  *                          --output-kind briefing \
  *                          --prompt "Schreib mir das taegliche Morgenbriefing nach §5.8."
  *   npm run cron:create -- --list
- *   npm run cron:create -- --list --agent mana
- *   npm run cron:create -- --id mana-morning-briefing --delete
+ *   npm run cron:create -- --list --agent orchestrator
+ *   npm run cron:create -- --id orchestrator-morning-briefing --delete
  *
  * See docs/cron-and-briefings.md for the full contract.
  */
@@ -52,7 +52,7 @@ Modes (one required):
 
 Flags:
   --agent <name>          Lowercase agent name (matches ~/agents/<name>/).
-  --id <kebab-id>         Stable job id (e.g. "mana-morning-briefing"). Becomes job_id everywhere.
+  --id <kebab-id>         Stable job id (e.g. "orchestrator-morning-briefing"). Becomes job_id everywhere.
   --name <"Label">        Human label, becomes briefing_title.
   --schedule <HH:MM>      24h local time. Minute must be a multiple of 5 (warning otherwise).
   --day <0..6|every>      Weekday (0=Sun, 6=Sat) or "every" (default: every).

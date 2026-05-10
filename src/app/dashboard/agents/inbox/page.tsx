@@ -118,6 +118,7 @@ export default function InboxPage() {
       />
 
       <div style={{ padding: '4px 28px 0' }}>
+        <div className="tabs-scroll">
         <div className="tabs">
           {tabs.map(t => (
             <button
@@ -129,6 +130,7 @@ export default function InboxPage() {
               <span className="brief-tab-count">{t.count}</span>
             </button>
           ))}
+        </div>
         </div>
       </div>
 

@@ -59,7 +59,7 @@ Mana Hub Bridge               (long-running Node process, file_drop mode)
 cp -R templates/agent-boilerplate ~/agents/<agent-name>
 ```
 
-Course default agent name: `taro`. User can pick anything lowercase.
+Course default agent name: `orchestrator`. User can pick anything lowercase.
 
 ### 3.2 Write `CLAUDE.md` Identity
 

@@ -109,7 +109,7 @@ export default function AgentSidebar() {
                 flex: 'none',
               }}
             >
-              AH
+              MH
             </div>
             <div className="sb-header-text" style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 13, fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.005em' }}>

@@ -51,7 +51,7 @@ Fuehre Nutzer durch ein blankes Mana-Hub-Core-Setup. Schreibe niemals Secrets in
 6. Agent-Boilerplate-Verzeichnis vorbereiten (Kurs ab Lesson 3.1):
    - **Nur ausfuehren**, wenn der Nutzer **kein** Live-Dreh von Lesson 3.1 plant oder ausdruecklich Hilfe beim Kopieren will.
    - `mkdir -p ~/agents`
-   - Frage den Nutzer nach dem Namen seines ersten Agents (Default-Beispiel im Kurs: `taro`).
+   - Frage den Nutzer nach dem Namen seines ersten Agents (Default-Beispiel im Kurs: `orchestrator`).
    - `cp -R templates/agent-boilerplate ~/agents/<agent-name>`
    - Erklaere: die Files in `~/agents/<agent-name>/` sind User Space — der Nutzer fuellt sie in den Lessons 3.2-3.7 selbst.
    - Wenn `BRIDGE_MODE=file_drop` aktiv ist, plus `BRIDGE_AGENT_NAMES` in `bridge/.env` so anpassen, dass es mit dem Agent-Namen matched.

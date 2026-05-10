@@ -364,6 +364,7 @@ function IssuesPageContent() {
       />
 
       <div style={{ padding: '4px 28px 0' }}>
+        <div className="tabs-scroll">
         <div className="tabs">
           {WORKFLOW_TABS.map(tab => (
             <button
@@ -375,6 +376,7 @@ function IssuesPageContent() {
               <span style={{ color: 'var(--fg-faint)', marginLeft: 4 }}>{workflowCounts[tab.key]}</span>
             </button>
           ))}
+        </div>
         </div>
       </div>
 
@@ -390,7 +392,8 @@ function IssuesPageContent() {
           </div>
         ) : (
           <div className="card" style={{ padding: 0 }}>
-            <table className="tbl">
+            <div className="tbl-wrap">
+            <table className="tbl" style={{ minWidth: 640 }}>
               <thead>
                 <tr>
                   <th style={{ width: 60 }}>ID</th>
@@ -421,6 +424,7 @@ function IssuesPageContent() {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
         )}
       </div>
@@ -446,9 +450,9 @@ function IssuesPageContent() {
               onClick={e => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-5 py-3 border-b border-zinc-800 flex-shrink-0">
-                <div className="flex items-center gap-2 text-sm text-zinc-400">
-                  <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-[11px] font-bold text-zinc-300">JM</span>
+              <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-zinc-800 flex-shrink-0">
+                <div className="flex items-center gap-2 text-sm text-zinc-400 min-w-0">
+                  <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-[11px] font-bold text-zinc-300">MH</span>
                   <ChevronRight className="w-3 h-3" />
                   <span className="text-white font-medium">New Task</span>
                   {planMode && (
@@ -500,7 +504,7 @@ function IssuesPageContent() {
                 </div>
 
                 {/* For [Assignee] in [Workspace] */}
-                <div className="px-5 py-2 flex items-center gap-2 text-sm flex-shrink-0">
+                <div className="px-5 py-2 flex flex-wrap items-center gap-2 text-sm flex-shrink-0">
                   <span className="text-zinc-500">For</span>
                   <select
                     value={newAgent}
@@ -716,8 +720,8 @@ function IssuesPageContent() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="px-5 py-3 border-t border-zinc-800 flex items-center justify-between flex-shrink-0">
-                  <div className="flex items-center gap-2">
+                <div className="px-5 py-3 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-3 flex-shrink-0">
+                  <div className="flex flex-wrap items-center gap-2">
                     <select
                       value={newStatus}
                       onChange={(e) => setNewStatus(e.target.value as 'todo' | 'in_progress')}

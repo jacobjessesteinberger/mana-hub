@@ -37,9 +37,53 @@ release when cutting a tag.
 
 ## [0.1.0] — 2026-05-10
 
-Initial public release of the Mana Hub Core. The repo is now publishable as
-a fresh-install starter for the "Dein AI-Team in 3 Tagen" course and for
-end-user installations.
+**Initial Public Release.** Mana Hub Core is now publishable as a fresh-install
+starter for the "Dein AI-Team in 3 Tagen" course and for end-user installations.
+
+### Mobile experience
+- Brand-new **mobile bottom tab bar** (`MobileTabBar`) with five quick-actions
+  (Dashboard, Chats, Inbox, Health, Theme) and an agent picker sheet for fast
+  cross-agent chat switching. Respects `safe-area-inset-bottom` so it never
+  overlaps the iOS home indicator.
+- Streamlined **mobile sidebar** with proper labels, full safe-area padding,
+  and clean transitions.
+- **Chat layout** redesigned for small screens: messages, prompt input, and
+  permission row size to `100svh` minus the tab bar. No more cropped input.
+- **Global responsive brandmauer** in `globals.css`: catches inline grid
+  patterns, oversized horizontal padding, and unbreakable rows on the
+  Dashboard, Issues, Inbox, Setup, Briefings, Routines, Org, Docs, and Agent
+  detail pages, so every page wraps and stacks correctly under 720px / 480px.
+- Agent detail "Health" block trimmed to real metrics (Soft Fails 24h,
+  Success rate, Open Issues) — no fake placeholder values.
+- `PageHeader` titles wrap as a block on mobile; tables become horizontally
+  scrollable via `.tbl-wrap`; tabs become horizontally scrollable via
+  `.tabs-scroll`.
+
+### Demo mode hardening
+- **Lazy Supabase initialization** on both server and browser. Both
+  `createServerSupabase()` and `getBrowserSupabase()` short-circuit to a
+  no-op stub client when `MANA_HUB_DEMO_MODE=true` (or its
+  `NEXT_PUBLIC_…` twin) is set, so the dashboard never throws
+  `Missing required env: NEXT_PUBLIC_SUPABASE_URL` in fresh installs.
+- `/api/agents/heartbeats` and `/api/agents/activity` short-circuit in
+  demo mode and return empty payloads, no Supabase calls.
+- `next-themes` upgraded to React 19-compatible build; theme toggle is
+  hydration-safe.
+- `DashboardLayout` wrapped in a dedicated shell so `useAuth` is always
+  inside `AuthProvider`.
+
+### Privacy hardening for the public repo
+- All host-internal agent names removed from defaults and templates.
+  Default agent is now `orchestrator`; bridge / agent-setup / boilerplate
+  examples reference `orchestrator` and `researcher` only.
+- Logo initials, avatars, and demo strings inside the dashboard switched
+  to neutral defaults (`MH`, `You`, generic placeholders) — Jesse Media
+  branding lives only in `LICENSE.md`, `COMMERCIAL-LICENSE.md`,
+  `SECURITY.md`, and `package.json` `author` (legal context only).
+- Knowledge-base templates and briefing snippets neutralized — no
+  Berlin-weather examples, no real customer references.
+
+
 
 ### Added
 - **Dashboard (Next.js 16, React 19, Tailwind v4)** with full Demo Mode that

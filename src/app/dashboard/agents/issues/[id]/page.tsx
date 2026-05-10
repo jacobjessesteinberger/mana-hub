@@ -403,7 +403,7 @@ export default function IssueDetailPage() {
   return (
     <div className="p-4 lg:p-6">
       {/* Breadcrumb + Actions */}
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex flex-wrap items-center gap-2 mb-4">
         <Link
           href="/dashboard/agents/issues"
           className="p-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors"
@@ -485,7 +485,7 @@ export default function IssueDetailPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-3 lg:gap-6">
         {/* Main Content */}
         <div className="space-y-4">
           {/* Title — click to edit */}

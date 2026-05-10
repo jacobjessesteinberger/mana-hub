@@ -111,9 +111,9 @@ export function PageHeader({
               {eyebrow}
             </div>
           ) : null}
-          <div className="row gap-3" style={{ alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="ph-title-row">
             <h1>{title}</h1>
-            {badges}
+            {badges ? <div className="ph-title-badges">{badges}</div> : null}
           </div>
           {description ? (
             <div className="ph-sub" style={{ marginTop: 4, maxWidth: 720 }}>

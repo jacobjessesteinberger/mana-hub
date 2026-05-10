@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
@@ -50,9 +51,16 @@ function buildBreadcrumb(pathname: string): { items: string[]; title: string } {
 
 export default function AgentTopbar() {
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const { isDemoMode } = useAuth()
   const { open: sbOpen, toggle: toggleSidebar } = useSidebar()
+
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+  }, [])
+  const activeTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : null
 
   const { items: breadcrumb, title } = buildBreadcrumb(pathname || '')
 
@@ -129,10 +137,13 @@ export default function AgentTopbar() {
         <button
           type="button"
           className="btn btn-ghost btn-icon btn-sm"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          onClick={() => setTheme(activeTheme === 'dark' ? 'light' : 'dark')}
           title="Theme"
+          suppressHydrationWarning
         >
-          {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+          <span suppressHydrationWarning>
+            {activeTheme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+          </span>
         </button>
       ) : null}
 
@@ -142,7 +153,7 @@ export default function AgentTopbar() {
 
       {manaHubConfig.shell.showUserAvatar ? (
         <AgentAvatar
-          agent={{ avatar: '', label: 'Mana Hub', color: 'linear-gradient(135deg, #10B981, #059669)' }}
+          agent={{ avatar: '', label: 'You', color: 'linear-gradient(135deg, #10B981, #059669)' }}
           size="md"
         />
       ) : null}

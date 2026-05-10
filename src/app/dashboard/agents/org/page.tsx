@@ -140,8 +140,8 @@ export default function OrgChartPage() {
   const directReports = data.filter(p => p.parent_agent === root?.agent_name)
 
   return (
-    <div className="flex-1 overflow-auto p-8">
-      <div className="mb-8">
+    <div className="flex-1 overflow-auto p-4 lg:p-8">
+      <div className="mb-6 lg:mb-8">
         <h1 className="text-xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
           <Users className="w-5 h-5 text-purple-500" />
           Org Chart

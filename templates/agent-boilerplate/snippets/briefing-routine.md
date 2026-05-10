@@ -9,10 +9,9 @@
        - Block A → as the new "§5.8 Cron-Briefings" section (right after §5.7)
        - Block B → as a one-paragraph addition at the end of "§5.2 Inbox"
        - Block C → as a "Briefing-Variante" subsection inside "§5.3 Outbox"
-  2. Replace every <AGENT_NAME> with your agent's lowercase name (e.g. "mana", "taro").
+  2. Replace every <AGENT_NAME> with your agent's lowercase name (e.g. "orchestrator", "researcher").
   3. Adjust the body format in Block A to fit your agent's actual job
-     (the example uses Wetter / Heute anstehend / Mein Vorschlag — that's MANA's
-     morning-briefing template; rename or restructure as needed).
+     (the example uses a neutral daily briefing; rename or restructure as needed).
   4. Make sure §0 (Boot-Sequenz) is set up — the briefing relies on the agent
      reading MEMORY.md, CURRENT.md, and any relevant knowledge-base files first.
 
@@ -48,7 +47,7 @@ Keine zusaetzlichen Sektionen ausser diesen drei. Kurz, knapp, ehrlich. Wenn etw
 
 ### Datenquellen
 
-- **Wetter:** Perplexity MCP — `perplexity_search` mit Query "Wetter in <Standort> heute". Standort liest du aus `knowledge-base/firma/uebersicht.md` Feld **`Sitz`**. Falls der Wert dort `STUB` oder leer ist: einmalig nach Standort fragen, in der Zwischenzeit Default `Berlin` verwenden, damit das Briefing nicht leer bleibt.
+- **Wetter:** Perplexity MCP — `perplexity_search` mit Query "Wetter in <Standort> heute". Standort liest du aus `knowledge-base/firma/uebersicht.md` Feld **`Standort`**. Falls der Wert dort `STUB` oder leer ist: einmalig nach Standort fragen und den Wetterblock bis dahin als "nicht konfiguriert" markieren.
 - **Heute anstehend:** `CURRENT.md` (Sprint, offene Tasks, Termine), `knowledge-base/projekte/*.md` (laufende Projekte). Keine wahllose KB-Lese-Aktion — nur Files die fuers Heute relevant sind, max. 3 (Karpathy-Wiki-Regel).
 - **Mein Vorschlag:** kommt aus deinem Kopf, gestuetzt auf MEMORY.md (langfristige Ziele), CURRENT.md (Sprint-Drift), beobachtete Friction der letzten Tage. Keine Schwurbel, keine Banalitaeten.
 
@@ -79,15 +78,15 @@ urgency: normal
 # Morning Briefing — 09.05.2026
 
 ## Wetter
-Berlin, 14 Grad, bewoelkt, kein Regen, leichter Wind aus West (Quelle: Perplexity, Stand 07:30).
+[Standort], [Temperatur], [Wetterlage], [Niederschlag/Wind] (Quelle: Perplexity, Stand HH:MM).
 
 ## Heute anstehend
-- Sprint-Ziel "Modul 4 fertig" — heute Lesson 4.3, ca. 2 h.
-- Deadline X faellig morgen — Vorbereitung 1 h.
-- Q2-OKRs in `firma/okrs.md` immer noch STUB. Eskalation Tag 3.
+- [Aktiver Task] — [Kontext], ca. [Zeit].
+- [Deadline] — [Vorbereitung / naechster Schritt].
+- [Offener Knowledge-Base-Punkt] — [Warum relevant].
 
 ## Mein Vorschlag
-30 Min Block fuer Y heute. Begruendung: spart morgen 1-2 h und reduziert Risiko Z. Naechster Schritt: Tool A oeffnen, Template B befuellen.
+[Konkreter Vorschlag fuer heute]. Begruendung: [Nutzen]. Naechster Schritt: [erste Aktion].
 ```
 
 ### Verbote
