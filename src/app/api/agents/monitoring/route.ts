@@ -2,10 +2,6 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { AGENTS } from '@/lib/agents-meta'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
 const isDemoMode = process.env.MANA_HUB_DEMO_MODE === 'true'
 
 
@@ -61,6 +57,11 @@ export async function GET() {
   }
 
   try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    )
+
     // Get latest heartbeat per agent from agent_heartbeats
     const { data: heartbeats } = await supabase
       .from('agent_heartbeats')

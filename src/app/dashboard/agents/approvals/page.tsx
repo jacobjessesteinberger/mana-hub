@@ -95,22 +95,6 @@ function normalizeApproval(row: ApprovalRow): ApprovalItem {
   }
 }
 
-function executionLabel(status: string) {
-  if (status === 'waiting_approval') return 'Wartet auf Freigabe'
-  if (status === 'approved_for_execution') return 'Freigegeben fuer Ausfuehrung'
-  if (status === 'executed') return 'Ausgefuehrt'
-  if (status === 'failed') return 'Ausfuehrung fehlgeschlagen'
-  if (status === 'expired') return 'Abgelaufen'
-  if (status === 'rejected') return 'Abgelehnt'
-  return status
-}
-
-function executionClass(status: string) {
-  if (status === 'approved_for_execution' || status === 'executed') return 'badge-ok'
-  if (status === 'failed' || status === 'rejected' || status === 'expired') return 'badge-err'
-  return 'badge-warn'
-}
-
 export default function ApprovalsPage() {
   const [items, setItems] = useState<ApprovalItem[]>([])
   const [policies, setPolicies] = useState<PolicyItem[]>([])

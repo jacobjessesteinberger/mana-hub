@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
+function createSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+}
 
 // GET /api/agents - Liste aller aktiven Agents mit Heartbeats
 export async function GET() {
   try {
+    const supabase = createSupabaseAdmin()
+
     const { data: agents, error: agentsError } = await supabase
       .from('agents')
       .select('*')
@@ -46,6 +50,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
+    const supabase = createSupabaseAdmin()
 
     const ALLOWED_FIELDS = ['name', 'full_name', 'role', 'description', 'emoji', 'department',
       'department_color', 'status', 'hierarchy_level', 'reports_to', 'is_active']
