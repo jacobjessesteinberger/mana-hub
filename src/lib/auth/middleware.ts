@@ -7,8 +7,6 @@ function requireEnv(name: string): string {
   return value
 }
 
-const supabaseUrl = requireEnv('NEXT_PUBLIC_SUPABASE_URL')
-const supabaseServiceKey = requireEnv('SUPABASE_SERVICE_ROLE_KEY')
 const isDemoMode = process.env.MANA_HUB_DEMO_MODE === 'true'
 
 export interface AuthenticatedUser {
@@ -33,7 +31,10 @@ export async function requireAuth(request: NextRequest): Promise<AuthenticatedUs
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const supabase = createClient(supabaseUrl, supabaseServiceKey)
+  const supabase = createClient(
+    requireEnv('NEXT_PUBLIC_SUPABASE_URL'),
+    requireEnv('SUPABASE_SERVICE_ROLE_KEY'),
+  )
   const { data: { user }, error } = await supabase.auth.getUser(effectiveToken)
 
   if (error || !user) {
