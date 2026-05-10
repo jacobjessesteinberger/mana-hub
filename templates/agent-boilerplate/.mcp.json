@@ -1,0 +1,4 @@
+{
+  "_comment": "MCP (Model Context Protocol) servers for this agent. The empty defaults below keep Claude Code happy on first boot. Replace mcpServers with the entries you actually want — examples are in MCP-EXAMPLES.md next to this file. Per-server secrets live in this agent's own .env (not committed). Reference: https://modelcontextprotocol.io",
+  "mcpServers": {}
+}

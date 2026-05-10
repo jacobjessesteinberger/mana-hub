@@ -1,0 +1,48 @@
+node_modules
+.next
+.open-next
+.wrangler
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# User-owned (gitignored except examples / READMEs)
+user.config/*
+!user.config/*.example.json
+!user.config/README.md
+
+workspace/*
+!workspace/README.md
+!workspace/knowledge.example
+!workspace/knowledge.example/**
+!workspace/skills.example
+!workspace/skills.example/**
+
+# Cursor: keep only the shipped Mana Hub skill, ignore everything else
+.cursor/*
+!.cursor/skills/
+!.cursor/skills/**
+
+# IDE / editor local files
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs / build / test artefacts
+*.log
+.DS_Store
+dist
+coverage
+tsconfig.tsbuildinfo
+playwright-report
+playwright/.cache
+test-results
+
+# Maintainer-only backlog (never publish)
+_course-prep/
+
+# Local agent / terminal scratch
+terminals/

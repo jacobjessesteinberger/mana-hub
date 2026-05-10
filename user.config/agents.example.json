@@ -1,0 +1,16 @@
+{
+  "agents": [
+    {
+      "name": "orchestrator",
+      "label": "Orchestrator",
+      "role": "Coordination",
+      "description": "Coordinates the agent team and routes work."
+    },
+    {
+      "name": "researcher",
+      "label": "Researcher",
+      "role": "Research",
+      "description": "Researches sources and prepares briefings."
+    }
+  ]
+}

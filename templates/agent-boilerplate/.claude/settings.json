@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "WebFetch(*)",
+      "mcp__*"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Write(~/.ssh/**)",
+      "Edit(~/.ssh/**)",
+      "Read(/etc/**)",
+      "Write(/etc/**)",
+      "Edit(/etc/**)",
+      "Read(/private/etc/**)",
+      "Write(/private/etc/**)",
+      "Edit(/private/etc/**)",
+      "Read(~/.zshrc)",
+      "Write(~/.zshrc)",
+      "Edit(~/.zshrc)",
+      "Read(~/.zshenv)",
+      "Write(~/.zshenv)",
+      "Edit(~/.zshenv)",
+      "Read(~/.zprofile)",
+      "Write(~/.zprofile)",
+      "Edit(~/.zprofile)",
+      "Read(~/.bashrc)",
+      "Write(~/.bashrc)",
+      "Edit(~/.bashrc)",
+      "Read(~/.bash_profile)",
+      "Write(~/.bash_profile)",
+      "Edit(~/.bash_profile)"
+    ]
+  }
+}

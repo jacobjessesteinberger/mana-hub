@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# One-shot start: detached tmux session + Claude Code in the agent directory.
+# Placeholders (substitute when copying to a real path, e.g. in a lesson):
+#   __AGENT_NAME__   — tmux session name (lowercase, matches BRIDGE_AGENT_NAMES in file_drop)
+#   __AGENT_DIR__    — absolute path to ~/agents/<agent-name>/
+#
+# The canonical production path is: use templates/launchagents/install-agent.sh
+# which writes a LaunchAgent plist; this file is a minimal teaching template.
+
+set -euo pipefail
+
+AGENT_NAME="__AGENT_NAME__"
+AGENT_DIR="__AGENT_DIR__"
+
+/usr/bin/caffeinate -i \
+  tmux new-session -d -s "$AGENT_NAME" -c "$AGENT_DIR" \
+  "claude --dangerously-skip-permissions"

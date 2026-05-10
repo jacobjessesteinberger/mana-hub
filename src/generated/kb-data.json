@@ -1,0 +1,52 @@
+{
+  "entries": [
+    {
+      "id": "demo-index",
+      "path": "INDEX.md",
+      "category": "root",
+      "file_name": "INDEX.md",
+      "file_size": 420,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "demo-research-standard",
+      "path": "workflows/research-standard.md",
+      "category": "workflows",
+      "file_name": "research-standard.md",
+      "file_size": 680,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "demo-content-planning",
+      "path": "workflows/content-planung.md",
+      "category": "workflows",
+      "file_name": "content-planung.md",
+      "file_size": 520,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "demo-research-agent",
+      "path": "agents/research-agent.md",
+      "category": "agents",
+      "file_name": "research-agent.md",
+      "file_size": 540,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "demo-cronjobs",
+      "path": "ops/cronjobs.md",
+      "category": "ops",
+      "file_name": "cronjobs.md",
+      "file_size": 450,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "demo-briefing-template",
+      "path": "templates/video-briefing.md",
+      "category": "templates",
+      "file_name": "video-briefing.md",
+      "file_size": 390,
+      "modified_at": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

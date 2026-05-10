@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Mana Hub Agent LaunchAgent template (one per Agent).
+
+  Placeholders are substituted by templates/launchagents/install-agent.sh:
+    __AGENT_NAME__   = lowercase agent name (e.g. "taro"); used in the Label, tmux session, and log file names
+    __AGENT_DIR__    = absolute path to the agent directory (e.g. ~/agents/taro)
+    __HOME__         = absolute path to the user home directory
+    __TMUX_PATH__    = absolute path to the tmux binary
+    __CLAUDE_PATH__  = absolute path to the claude binary
+
+  The substituted file lands at ~/Library/LaunchAgents/ai.claude.<agent>.plist
+  and is User Space (gitignored).
+
+  Behaviour:
+  - Starts a tmux session named after the agent
+  - Inside tmux: caffeinate -i claude --dangerously-skip-permissions in the agent directory
+  - tmux keeps Claude Code alive even when caffeinate restarts
+  - LaunchAgent restarts the whole tmux+claude stack if it crashes
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>ai.claude.__AGENT_NAME__</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>__TMUX_PATH__</string>
+    <string>new-session</string>
+    <string>-d</string>
+    <string>-s</string>
+    <string>__AGENT_NAME__</string>
+    <string>-c</string>
+    <string>__AGENT_DIR__</string>
+    <string>/usr/bin/caffeinate -i __CLAUDE_PATH__ --dangerously-skip-permissions</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__AGENT_DIR__</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:__HOME__/.nvm/versions/node/current/bin:__HOME__/Library/pnpm</string>
+    <key>HOME</key>
+    <string>__HOME__</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>ThrottleInterval</key>
+  <integer>15</integer>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/mana-hub-agents/__AGENT_NAME__.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/mana-hub-agents/__AGENT_NAME__.error.log</string>
+</dict>
+</plist>

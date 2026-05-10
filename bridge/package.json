@@ -1,0 +1,47 @@
+{
+  "name": "mana-hub-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local connector that polls agent_messages from your Mana Hub Supabase project and produces assistant replies. Boilerplate echo implementation; replace handleUserMessage() with your real agent runtime.",
+  "type": "module",
+  "main": "src/index.ts",
+  "license": "SEE LICENSE IN ../LICENSE.md",
+  "homepage": "https://github.com/jesse-media/mana-hub-starter/tree/main/bridge",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesse-media/mana-hub-starter.git",
+    "directory": "bridge"
+  },
+  "bugs": {
+    "url": "https://github.com/jesse-media/mana-hub-starter/issues"
+  },
+  "author": {
+    "name": "JESSE MEDIA (Jacob Jesse)",
+    "url": "https://github.com/jesse-media"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "start:keep-awake": "bash scripts/start-with-caffeinate.sh",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "launchd:install": "bash launchd/install.sh",
+    "launchd:uninstall": "bash launchd/uninstall.sh",
+    "launchd:status": "bash launchd/status.sh",
+    "launchd:logs": "bash launchd/logs.sh",
+    "launchd:restart": "launchctl kickstart -k gui/$(id -u)/com.manahub.bridge"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.2",
+    "chokidar": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.0"
+  }
+}

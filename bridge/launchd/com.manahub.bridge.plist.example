@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Mana Hub Bridge LaunchAgent template.
+
+  Placeholders are substituted by bridge/launchd/install.sh:
+    __NODE_PATH__   = absolute path to a node binary that exists outside Cursor
+    __TSX_CLI__     = absolute path to tsx/dist/cli.mjs inside bridge/node_modules
+    __BRIDGE_DIR__  = absolute path to the bridge/ directory
+    __HOME__        = absolute path to your home directory (for log paths)
+
+  Do NOT commit the substituted file. The substituted file is written to
+  ~/Library/LaunchAgents/com.manahub.bridge.plist by install.sh.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.manahub.bridge</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
+    <string>__NODE_PATH__</string>
+    <string>__TSX_CLI__</string>
+    <string>src/index.ts</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__BRIDGE_DIR__</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>NODE_ENV</key>
+    <string>production</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/mana-hub-bridge/bridge.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/mana-hub-bridge/bridge.error.log</string>
+</dict>
+</plist>

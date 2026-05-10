@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Wrapper script for booting this agent under tmux / LaunchAgent.
+# Copy to start.sh in the same folder, chmod +x start.sh, and point your
+# LaunchAgent or `tmux new` command at it.
+
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+# Load per-agent .env if it exists. set -a auto-exports every assignment to
+# child processes (Claude Code), set +a turns it off again.
+if [ -f .env ]; then
+  set -a
+  # shellcheck disable=SC1091
+  source .env
+  set +a
+fi
+
+# caffeinate -i keeps the Mac awake while Claude Code is running.
+# --dangerously-skip-permissions skips the interactive permission prompts;
+# the .claude/settings.json file in this folder is the authoritative
+# allow / deny source instead.
+exec caffeinate -i claude --dangerously-skip-permissions

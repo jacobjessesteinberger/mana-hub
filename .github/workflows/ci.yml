@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MANA_HUB_DEMO_MODE: "true"
+  NEXT_PUBLIC_MANA_HUB_DEMO_MODE: "true"
+
+jobs:
+  app:
+    name: Dashboard (lint + typecheck + build + doctor)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Doctor (demo mode)
+        run: npm run doctor
+
+      - name: Build
+        run: npm run build
+
+  bridge:
+    name: Bridge (typecheck)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: bridge/package-lock.json
+
+      - name: Install bridge dependencies
+        working-directory: bridge
+        run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+
+      - name: Typecheck bridge
+        working-directory: bridge
+        run: npm run typecheck

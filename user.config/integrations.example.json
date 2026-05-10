@@ -1,0 +1,6 @@
+{
+  "backend": "supabase",
+  "auth": "supabase-email",
+  "agentConnector": "demo",
+  "knowledgeBasePath": "workspace/knowledge"
+}
