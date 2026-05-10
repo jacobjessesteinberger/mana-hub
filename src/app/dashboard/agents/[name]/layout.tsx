@@ -44,7 +44,7 @@ export default function AgentDetailLayout({ children }: { children: React.ReactN
 
   return (
     <div
-      className={cn('agent-detail', 'fade-in')}
+      className={cn('agent-detail', 'fade-in', isChat && 'is-chat')}
       style={
         isChat
           ? { display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, overflow: 'hidden' }
@@ -52,7 +52,7 @@ export default function AgentDetailLayout({ children }: { children: React.ReactN
       }
     >
       {/* Compact Hero */}
-      <div style={{ padding: '18px 28px 0', flex: 'none' }}>
+      <div className="agent-detail-hero" style={{ padding: '18px 28px 0', flex: 'none' }}>
         <div className="card" style={{ padding: '12px 16px', overflow: 'visible', position: 'relative' }}>
           <div className="row gap-3" style={{ alignItems: 'center', flexWrap: 'wrap', rowGap: 10 }}>
             <AgentAvatar agent={meta} size="lg" className="agent-hero-avatar" />
@@ -129,7 +129,7 @@ export default function AgentDetailLayout({ children }: { children: React.ReactN
       {/* Tabs row */}
       <div
         style={{ padding: '10px 28px 0', display: 'flex', gap: 4, overflowX: 'auto', flex: 'none' }}
-        className="scrollbar-none"
+        className="agent-detail-tabs scrollbar-none"
       >
         {TABS.map(tab => {
           const href = tab.id ? `${basePath}/${tab.id}` : basePath
@@ -145,6 +145,7 @@ export default function AgentDetailLayout({ children }: { children: React.ReactN
 
       {/* Tab Content */}
       <div
+        className="agent-detail-content"
         style={
           isChat
             ? {

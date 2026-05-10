@@ -57,7 +57,7 @@ export const UserMessageBubble = memo(function UserMessageBubble({
 
   return (
     <div id={`msg-${msg.id}`} className={cn('group flex justify-end', (isRetracted || isSuperseded) && 'opacity-65')}>
-      <div className="max-w-[80%] flex items-start gap-2">
+      <div className="agent-user-bubble max-w-[80%] flex items-start gap-2">
         <div className="self-center flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
           {!isRetracted ? (
             <button onClick={copy} className="p-1 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-400" title={copied ? 'Copied' : 'Copy'} type="button">
@@ -120,7 +120,7 @@ export const AssistantMessageBubble = memo(function AssistantMessageBubble({
 
   return (
     <div id={`msg-${msg.id}`} className="group">
-      <div className="flex items-start gap-3" {...longPress}>
+      <div className="agent-assistant-bubble flex items-start gap-3" {...longPress}>
         <div className="flex-shrink-0 mt-1">
           <AgentAvatar agent={meta} size="sm" />
         </div>

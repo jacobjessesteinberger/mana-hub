@@ -676,17 +676,17 @@ export default function AgentChatPage() {
 
   return (
     <div
-      className={cn('h-full min-h-0 overflow-hidden', dragOver && 'ring-2 ring-inset ring-blue-500/50')}
+      className={cn('agent-chat-page h-full min-h-0 overflow-hidden', dragOver && 'ring-2 ring-inset ring-blue-500/50')}
       onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
       onDragLeave={() => setDragOver(false)}
       onDrop={(e) => { e.preventDefault(); setDragOver(false); if (e.dataTransfer.files.length) chatInputRef.current?.addFiles(e.dataTransfer.files) }}
     >
-      <div className="grid h-full min-h-0 grid-cols-1 gap-4 md:grid-cols-[minmax(0,1fr)_280px]">
-      <div className="card relative flex min-h-0 flex-col overflow-hidden">
+      <div className="agent-chat-shell grid h-full min-h-0 grid-cols-1 gap-4 md:grid-cols-[minmax(0,1fr)_280px]">
+      <div className="agent-chat-card card relative flex min-h-0 flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[var(--bg-elev)] via-[var(--bg-elev)]/80 to-transparent z-[5]" />
 
       <div ref={scrollContainerRef} className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden relative w-full">
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-5 overflow-hidden break-words">
+        <div className="agent-chat-messages w-full max-w-4xl mx-auto px-4 sm:px-6 pt-10 pb-5 overflow-hidden break-words">
           {loading ? (
             <div className="flex items-center justify-center min-h-[40vh]">
               <Loader2 className="w-5 h-5 animate-spin text-zinc-500" />
@@ -839,7 +839,7 @@ export default function AgentChatPage() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--bg-elev)] via-[var(--bg-elev)]/90 to-transparent z-[5]" />
 
       {taskProposal && (
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 pb-3">
+        <div className="agent-chat-proposal relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 pb-3">
           <div className="rounded-2xl border border-purple-200 dark:border-purple-500/30 bg-purple-50/90 dark:bg-purple-950/30 shadow-lg shadow-purple-950/5 backdrop-blur">
             <div className="flex items-start justify-between gap-3 px-4 py-3 border-b border-purple-200/70 dark:border-purple-500/20">
               <div className="flex items-start gap-2 min-w-0">
