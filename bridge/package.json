@@ -34,14 +34,14 @@
     "launchd:restart": "launchctl kickstart -k gui/$(id -u)/com.manahub.bridge"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.95.2",
+    "@supabase/supabase-js": "^2.106.1",
     "chokidar": "^5.0.0",
     "dotenv": "^16.4.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.3",
     "typescript": "^5.5.0"
   }
 }
