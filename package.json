@@ -46,37 +46,37 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.73.0",
-    "@supabase/supabase-js": "^2.95.2",
+    "@anthropic-ai/sdk": "^0.102.0",
+    "@supabase/supabase-js": "^2.107.0",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
-    "framer-motion": "^12.33.0",
+    "date-fns": "^4.4.0",
+    "framer-motion": "^12.40.0",
     "lucide-react": "^0.563.0",
-    "next": "^16.2.4",
+    "next": "^16.2.7",
     "next-themes": "^1.0.0-beta.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "react-markdown": "^10.1.0",
-    "recharts": "^3.7.0",
+    "recharts": "^3.8.1",
     "remark-gfm": "^4.0.1",
-    "tailwind-merge": "^3.4.0",
+    "tailwind-merge": "^3.6.0",
     "web-push": "^3.6.7",
-    "zod": "^4.3.6"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.16.3",
-    "@playwright/test": "^1.59.1",
+    "@opennextjs/cloudflare": "^1.19.11",
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/web-push": "^3.6.4",
     "eslint": "^9",
-    "eslint-config-next": "^16.2.4",
+    "eslint-config-next": "^16.2.7",
     "tailwindcss": "^4",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.4",
     "typescript": "^5",
-    "wrangler": "^4.63.0"
+    "wrangler": "^4.98.0"
   },
   "overrides": {
     "postcss": "^8.5.10"
