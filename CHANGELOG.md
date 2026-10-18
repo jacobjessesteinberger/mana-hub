@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Each release also has a matching GitHub Release at
-<https://github.com/jesse-media/mana-hub/releases> with prebuilt notes.
+<https://github.com/jacobjessesteinberger/mana-hub/releases> with prebuilt notes.
 
 ## Versioning rules
 
@@ -163,5 +163,5 @@ starter for the "Dein AI-Team in 3 Tagen" course and for end-user installations.
   the public repo** — verified with a secret scan + path scan over the
   whole tree before publishing.
 
-[Unreleased]: https://github.com/jesse-media/mana-hub/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/jesse-media/mana-hub/releases/tag/v0.1.0
+[Unreleased]: https://github.com/jacobjessesteinberger/mana-hub/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/jacobjessesteinberger/mana-hub/releases/tag/v0.1.0

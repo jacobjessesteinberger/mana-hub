@@ -10,7 +10,7 @@ import MarkdownDoc from '@/components/docs/MarkdownDoc'
 import ModuleSection from '@/components/docs/ModuleSection'
 import { MODULE_SPECS } from '@/components/docs/module-specs'
 
-const GITHUB_REPO_BASE = 'https://github.com/jesse-media/mana-hub'
+const GITHUB_REPO_BASE = 'https://github.com/jacobjessesteinberger/mana-hub'
 const GITHUB_DOCS_BASE = `${GITHUB_REPO_BASE}/blob/main/docs`
 
 type ActiveKey = string

@@ -5,7 +5,7 @@ Mana Hub Starter separates updateable core files from installer-owned files.
 Expected workflow:
 
 ```bash
-git remote add upstream https://github.com/jesse-media/mana-hub.git
+git remote add upstream https://github.com/jacobjessesteinberger/mana-hub.git
 git fetch upstream
 git merge upstream/main
 npm install

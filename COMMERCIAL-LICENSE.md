@@ -25,7 +25,7 @@ Germany
 ## How to request a commercial license
 
 1. **Preferred**: open a GitHub issue at
-   <https://github.com/jesse-media/mana-hub/issues> titled
+   <https://github.com/jacobjessesteinberger/mana-hub/issues> titled
    "Commercial license inquiry" (no confidential details — we will move the
    conversation to email).
 2. **Alternative**: contact the maintainer privately via the channel listed
