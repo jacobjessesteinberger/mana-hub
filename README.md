@@ -3,9 +3,9 @@
 > Self-hosted operations dashboard for your own AI agents.
 > Postgres + Next.js + Claude Code + your own Mac.
 
-[![Release](https://img.shields.io/github/v/release/jesse-media/mana-hub?include_prereleases&label=release&color=8B5CF6)](https://github.com/jesse-media/mana-hub/releases)
+[![Release](https://img.shields.io/github/v/release/jacobjessesteinberger/mana-hub?include_prereleases&label=release&color=8B5CF6)](https://github.com/jacobjessesteinberger/mana-hub/releases)
 [![License](https://img.shields.io/badge/license-Community-blue)](LICENSE.md)
-[![CI](https://img.shields.io/github/actions/workflow/status/jesse-media/mana-hub/ci.yml?branch=main&label=CI)](https://github.com/jesse-media/mana-hub/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/jacobjessesteinberger/mana-hub/ci.yml?branch=main&label=CI)](https://github.com/jacobjessesteinberger/mana-hub/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520.10-339933)](package.json)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E)](https://supabase.com)
@@ -74,7 +74,7 @@ default) lets you boot the dashboard with synthetic data and zero secrets.
 ## Quickstart (5 min, demo mode)
 
 ```bash
-git clone https://github.com/jesse-media/mana-hub.git mana-hub
+git clone https://github.com/jacobjessesteinberger/mana-hub.git mana-hub
 cd mana-hub
 cp .env.example .env.local
 npm install
@@ -166,7 +166,7 @@ Mana Hub follows [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`
 - **PATCH** — bug fixes, doc improvements, security patches.
 
 Every release is tagged (`vX.Y.Z`), published as a
-[GitHub Release](https://github.com/jesse-media/mana-hub/releases) with notes,
+[GitHub Release](https://github.com/jacobjessesteinberger/mana-hub/releases) with notes,
 and recorded in [`CHANGELOG.md`](CHANGELOG.md). New SQL migrations always
 land additively and idempotently — see [`MIGRATIONS.md`](MIGRATIONS.md).
 
@@ -209,10 +209,10 @@ It must not write secrets into Git-tracked files.
 
 ## Community & contributing
 
-- Bug reports and questions: <https://github.com/jesse-media/mana-hub/issues>
+- Bug reports and questions: <https://github.com/jacobjessesteinberger/mana-hub/issues>
 - Pull requests: see [`CONTRIBUTING.md`](CONTRIBUTING.md). Keep secrets out,
   document migrations.
-- Discussions: <https://github.com/jesse-media/mana-hub/discussions>
+- Discussions: <https://github.com/jacobjessesteinberger/mana-hub/discussions>
 - If Mana Hub helps you ship, a star on GitHub is the best way to say thanks.
 
 ## License

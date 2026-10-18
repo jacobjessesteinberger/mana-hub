@@ -7,7 +7,7 @@ Please **do not** open a public GitHub issue for security reports.
 Use one of these private channels instead:
 
 1. **GitHub Private Vulnerability Reporting** — preferred. Open
-   <https://github.com/jesse-media/mana-hub/security/advisories/new>.
+   <https://github.com/jacobjessesteinberger/mana-hub/security/advisories/new>.
 2. **Maintainer contact** — if private reporting is not enabled yet, reach
    the maintainer via the GitHub profile <https://github.com/jesse-media>
    and request a private channel.

@@ -16,13 +16,13 @@
     "ops"
   ],
   "license": "SEE LICENSE IN LICENSE.md",
-  "homepage": "https://github.com/jesse-media/mana-hub#readme",
+  "homepage": "https://github.com/jacobjessesteinberger/mana-hub#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jesse-media/mana-hub.git"
+    "url": "git+https://github.com/jacobjessesteinberger/mana-hub.git"
   },
   "bugs": {
-    "url": "https://github.com/jesse-media/mana-hub/issues"
+    "url": "https://github.com/jacobjessesteinberger/mana-hub/issues"
   },
   "author": {
     "name": "JESSE MEDIA (Jacob Jesse)",
